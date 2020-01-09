@@ -1,0 +1,47 @@
+
+{% extends 'basic.html' %}
+
+{% block title%} Register  {% endblock %}
+{% block body %}
+<div class="container my-3">
+    <h3>Register Here</h3>
+    <form action="register" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="name"> Name</label>
+    <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name">
+  </div>
+
+        <div class="form-group">
+    <label for="uname">User Name</label>
+    <input type="text" class="form-control" id="uname" name='username' placeholder="Enter Your user Name">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email">
+  </div>
+              <div class="form-group">
+    <label for="pname">Password</label>
+    <input type="password" class="form-control" id="pname" name='pname' placeholder="Enter Your password">
+  </div>
+              <div class="form-group">
+    <label for="cname">Confirm password</label>
+    <input type="password" class="form-control" id="cname" name='cname' placeholder="Enter Your password">
+  </div>
+
+
+
+
+        <button type="submit" class="btn btn-success">                       Submit</button>
+</form>
+<div class="alert alert-danger" role="alert">
+     {% for message in messages %}
+         <i>{{ message }}</i>
+    {% endfor %}
+
+</div>
+
+
+
+</div>
+{% endblock %}
